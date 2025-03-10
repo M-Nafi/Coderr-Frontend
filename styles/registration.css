@@ -1,0 +1,35 @@
+main {
+    position: relative;
+}
+
+.registration_img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 32px;
+    width: calc(50vw - 300px - 64px);
+    max-width: 450px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .registration_img {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+    .registration_img {
+        
+        width: calc(50vw - 300px - 124px);
+        right: calc(50vw - 720px +16px);
+    }
+}
+
+@media screen and (min-width: 1600px)  {
+    .registration_img {
+        
+        width: calc(50vw - 300px - 124px);
+        right: calc(50vw - 720px - 64px);
+    }
+}

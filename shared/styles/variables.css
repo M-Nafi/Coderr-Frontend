@@ -1,0 +1,53 @@
+:root {
+  --bg-color: white;
+  --bg-color-dark: #006633;
+
+  --link-color: #01B676;
+  --link-hover-color: #34C591;
+
+  --font-prime-color: #01B676;
+  --font_sec_color: #7D7F80;
+  --font_white_color: #FFFFFF;
+
+
+  --section-max-w: 1440px;
+
+  --btn-rad: 8px;
+  --btn-pad: 12px 24px;
+  --btn-pad-round: 4px;
+  --btn-prime-color: #01B676;
+  --btn-prime-hover-color: #34C591;
+  --btn-prime-active-color: #34C591;
+  --btn-prime-font-color: #ffffff;
+  --btn-secondary-border: 1px solid #01B676;
+  --btn-secondary-color: transparent;
+  --btn-secondary-hover-color: #01B676;
+  --btn-secondary-active-color: #01B676;
+  --btn-secondary-font-color: #01B676;
+  --btn-delete-color: #f82929;
+  --btn-delete-hover-color: #fc6767;
+  --btn-delete-active-color: #fd3c3c;
+
+
+  --form-max-w: 800px;
+  --form-s-max-w: 600px;
+  --form-rad: 16px;
+  --form-pad: 48px;
+  --form-pad-small: 32px;
+  --form-bg-color: #ffffff;
+  --form-border: 1px solid #BFBFBF;
+  --form-input-rad: 8px;
+  --form-input-padding: 16px 16px;
+  --form-input-border: 1px solid #BFBFBF;
+  --form-input-border-color: #e0e0e0;
+  --form-input-active-border-color: ##7D7F80;
+  --form-input-bg-color: #e0e0e000;
+}
+
+@media screen and (max-width: 769px) {
+  :root {
+  --form-pad: 16px;
+  --form-input-padding: 8px 8px;
+  --form-pad-small: 16px;
+  }
+}

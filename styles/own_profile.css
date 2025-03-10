@@ -1,0 +1,112 @@
+.business_section{
+    position: relative;
+    flex-direction: row;
+}
+
+.business_section_profile{
+    width: 450px;
+}
+
+.business_section_content{
+    width: calc(100% - 450px);
+}
+
+.profile_detail > div{
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .business_section{
+        flex-direction: column;
+    }
+    
+    .business_section_profile{
+        width: 100%;
+    }
+    
+    .business_section_content{
+        width: 100%;
+    }
+}
+
+.about_me_section>div {
+    width: 100%;
+}
+
+.profile_detail > div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile_detail > img{
+    align-self: center;
+}
+
+@media only screen and (min-width: 770px) and (max-width: 1024px) {
+    .about_me_section {
+      flex-direction: row !important;
+    }
+  
+    .about_me_section>div {
+      width: 50%;
+    }
+
+    .about_me_top_hr{
+        border: none;
+        height: 64px;
+    }
+
+    .profile_detail > div{
+        display: block;
+    }
+
+    .profile_detail > img{
+        align-self: unset;
+    }
+}
+
+.profile_customer{
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 769px) {
+    .about_me_section {
+      flex-direction: column;
+    }
+  
+    .about_me_section>div {
+      width: 100%;
+    }
+
+    .profile_customer{
+        flex-direction: column;
+    }
+}
+
+
+.own_offer_header{
+    height: 36px;
+    max-width: calc(100% - 36px );
+}
+
+.variant_section{
+    position: relative;
+}
+
+.feature_list > li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feature_list > li > div{
+    gap: 4px;
+}
+
+
+
+.feature_list_input_box > input{
+    padding: 12px 16px !important;
+}

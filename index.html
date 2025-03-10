@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coderr/</title>
+    <link rel="icon" type="image/png" href="./assets/logo/favicon.png" />
+
+
+    <link rel="stylesheet" href="./shared/styles/variables.css">
+    <link rel="stylesheet" href="./shared/styles/standard.css">
+    <link rel="stylesheet" href="./shared/styles/form.css">
+    <link rel="stylesheet" href="./shared/styles/assets.css">
+    <link rel="stylesheet" href="./shared/styles/header_footer.css">
+    <link rel="stylesheet" href="./shared/styles/fonts.css">
+    <link rel="stylesheet" href="./styles/index.css">
+
+
+    <script src="./shared/scripts/config.js"></script>
+
+    <script src="./shared/scripts/api.js"></script>
+    <script src="./shared/scripts/auth.js"></script>
+    <script src="./shared/scripts/redirect.js"></script>
+    <script src="./shared/scripts/ui_helper.js"></script>
+
+    <script src="./shared/scripts/user_crud.js"></script>
+
+    <script src="./shared/scripts/template/header_template.js"></script>
+    <script src="./shared/scripts/header.js"></script>
+
+    <script src="./scripts/index.js"></script>
+</head>
+
+<body onload="setHeader(); indexInit()" onclick="closeAllOpenedElements()">
+    <header class="main_header">
+
+        <a class="logo" href="./index.html">
+            <img src="./assets/logo/logo_coderr.svg" alt="" srcset="">
+        </a>
+        <div id="head_content_right" class="d_flex_cc_gm head_content_right"></div>
+    </header>
+
+    <main>
+
+        <div class="pad_m">
+            <section class="section_group landingheader_box d_flex_cc_gm f_d_c">
+                <img class="person_img" src="./assets/img/landingpage/person_1.png" alt="" srcset="">
+                <img class="person_img" src="./assets/img/landingpage/person_2.png" alt="" srcset="">
+                <img class="person_img" src="./assets/img/landingpage/person_3.png" alt="" srcset="">
+                <img class="person_img" src="./assets/img/landingpage/person_4.png" alt="" srcset="">
+                <h1 class="font_white_color">Finde professionelle IT-Talente für dein Unternehmen</h1>
+                <div class="searchbar w_full">
+                    <input id="index_search_field" placeholder="Wonach suchst du?" type="text">
+                    <button class="d_flex_cc_gm" onclick="redirectToOfferListWSearch()">
+                        <img src="./assets/icons/search.svg" alt="">
+                    </button>
+                </div>
+            </section>
+        </div>
+        <section class="section_group profile_stats pad_l">
+            <div class="w_full">
+                <div class="card">
+                    <h2 id="base_info_offer_count" class="font_prime_color">-</h2>
+                    <p>Angebote</p>
+                </div>
+                <div class="card">
+                    <h2 id="base_info_review_count" class="font_prime_color d_flex_cc_gm">
+                        -
+                    </h2>
+                    <p>Bewertungen</p>
+                </div>
+            </div>
+            <div class="w_full">
+                <div class="card">
+                    <h2 id="base_info_business_profile_count" class="font_prime_color">-</h2>
+                    <p>Anbieter</p>
+                </div>
+                <div class="card">
+                    <div class="d_flex_cc_gm">
+                        <img src="./assets/icons/kid_star_green.svg" alt="" srcset="">
+                        <h2 id="base_info_average_rating" class="font_prime_color">
+                        </h2>
+                    </div>
+                    <p>Zufriedenheit</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="green_info_section d_flex_cc_gl w_full">
+            <section class=" d_flex_cc_gl pad_l">
+                <h2>
+                    Kompetente Programmierer für jeden Bereich nur einen Klick entfernt
+                </h2>
+                <div class="d_flex_cc_gl f_d_c">
+                    <div class="d_flex_cc_gl">
+                        <img src="./assets/icons/check.svg" alt="" srcset="">
+                        <p>
+                            Klare und transparente Preise. Bezahlung pro Projekt oder pro Stunde (Pro). Zahlungen werden
+                            nur freigegeben, wenn du sie genehmigst.
+                        </p>
+                    </div>
+                    <div class="d_flex_cc_gl">
+                        <img src="./assets/icons/check.svg" alt="" srcset="">
+                        <p>
+                            Qualitativ hochwertige Arbeit schneller erledigt. Filtern, um schnell die passenden Freelancer zu finden, und großartige Arbeit in kürzester Zeit geliefert bekommen – jederzeit
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="section_group pad_l">
+        </section>
+    </main>
+    <footer class="main_footer pad_l">
+        <a class="logo" href="./index.html">
+            <img src="./assets/logo/logo_coderr_light.svg" alt="" srcset="">
+        </a>
+        <p>© 2024 Coderr. All rights reserved.</p>
+        <div class="d_flex_cc_gm">
+            <a class="link" href="./imprint.html">Impressum</a>
+            <a class="link" href="./privacy_policy.html">Datenschutz</a>
+        </div>
+    </footer>
+</body>
+
+</html>

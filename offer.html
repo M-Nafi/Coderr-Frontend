@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coderr/</title>
+    <link rel="icon" type="image/png" href="./assets/logo/favicon.png" />
+
+    <link rel="stylesheet" href="./shared/styles/variables.css">
+    <link rel="stylesheet" href="./shared/styles/standard.css">
+    <link rel="stylesheet" href="./shared/styles/form.css">
+    <link rel="stylesheet" href="./shared/styles/assets.css">
+    <link rel="stylesheet" href="./shared/styles/fonts.css">
+    <link rel="stylesheet" href="./shared/styles/header_footer.css">
+    <link rel="stylesheet" href="./styles/offer.css">
+
+    <script src="./shared/scripts/config.js"></script>
+    <script src="./shared/scripts/api.js"></script>
+    <script src="./shared/scripts/redirect.js"></script> 
+    <script src="./shared/scripts/ui_helper.js"></script>
+    <script src="./shared/scripts/form_helper.js"></script>
+    <script src="./shared/scripts/auth.js"></script>
+    
+    <script src="./shared/scripts/template/review_templates.js"></script>
+    <script src="./shared/scripts/review_crud.js"></script>
+    <script src="./shared/scripts/user_crud.js"></script>
+    <script src="./shared/scripts/template/offer_templates.js"></script>
+    <script src="./shared/scripts/offer_crud.js"></script>
+    <script src="./shared/scripts/order_crud.js"></script>
+    <script src="./shared/scripts/template/header_template.js"></script>
+    <script src="./shared/scripts/header.js"></script>
+
+    <script src="./scripts/template/single_offer_template.js"></script>
+    <script src="./scripts/single_offer.js"></script>
+</head>
+
+<body onload="singleOfferInit()" onclick="closeAllOpenedElements()">
+    <header class="main_header">
+
+        <a class="logo" href="./index.html">
+            <img src="./assets/logo/logo_coderr.svg" alt="" srcset="">
+        </a>
+
+        <div id="head_content_right" class="d_flex_cc_gm head_content_right"></div>
+    </header>
+
+    <main>
+        
+        <div class="section_group d_flex_cc_gxl f_d_r">
+            <section class="offer_left_content d_flex_cc_gl f_d_c">
+                <section class="section_group_w_border d_flex_cs_gm f_d_c" id="single_offer_header_section">
+                    
+                </section>
+
+                <section class="section_group d_flex_cs_gl f_d_c d_none" id="resp_detail_box"></section>
+
+                <section class="section_group w_full  d_flex_cs_gl f_d_c">
+                    <h2 class="font_prime_color">Bewertungen</h2>
+                    <div class="w_full d_flex_cs_gm review_header">
+
+                        <button id="review_add_btn" onclick="openDialog('rating_dialog')" class="std_btn btn_prime pad_s">
+                            Bewertung hinzufügen
+                        </button>
+                        <div class="f_d_r_resp_c">
+                            <label for="review_filter">Sortieren nach:</label>
+                            <select onchange="changeReviewFilterSingleOffer(this)" id="review_filter" class="input_field">
+                                <option value="-updated_at" selected>Neueste zuerst</option>
+                                <option value="updated_at">Älteste zuerst</option>
+                                <option value="-rating">Höchste Bewertung</option>
+                                <option value="rating">Niedrigste Bewertung</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class=" d_flex_cs_gm f_d_c w_full" id="single_offer_review_list">
+                        
+                    </div>
+
+                    <div class="w_full d_flex_cc_gm review_footer">
+                        <hr>
+                        <p class="link d_flex_cc_gm">
+                            <img src="./assets/icons/add.svg" alt="" srcset="">
+                            Mehr anzeigen
+                        </p>
+                    </div>
+                </section>
+            </section>
+
+            <section id="detail_box" class=" offer_right_content section_group">
+                <div class="section_group_w_border d_flex_cs_gm f_d_c">
+                    <div class="offer_detail_header" id="offer_detail_header">
+                        <button onclick="renderSingleOfferDetail('basic'); activatedButton(this)" class="pad_s active">Basic</button>
+                        <button onclick="renderSingleOfferDetail('standard'); activatedButton(this)" class="pad_s">Standard</button>
+                        <button onclick="renderSingleOfferDetail('premium'); activatedButton(this)" class="pad_s">Premium</button>
+                    </div>
+
+                    <div class="d_flex_cs_gm f_d_c" id="single_offer_detail_section">
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section onclick="closeDialog('order_dialog')" id="order_dialog" class="dialog pad_m d_flex_cc_gm d_none">
+                <div onclick="stopProp(event)" class="small_form d_flex_cs_gl f_d_c m_auto" id="single_offe_order_dialog">                    
+                </div>
+            </section>
+
+            <section onclick="closeDialog('rating_dialog')" id="rating_dialog" class="dialog pad_m d_flex_cc_gm d_none">
+                <div onclick="stopProp(event)" class="m_auto small_form d_flex_cs_gm f_d_c">
+    
+                    <h2 class="font_prime_color">Bewertung hinzufügen</h2>
+     
+                    <div class="star_rating d_flex_cs_gm">
+                        <div class="review_stars stars_input" id="review_stars_input">
+                            <img src="./assets/icons/kid_star.svg" onmouseenter="updateStars(this)" alt="" srcset="">
+                            <img src="./assets/icons/kid_star.svg" onmouseenter="updateStars(this)" alt="" srcset="">
+                            <img src="./assets/icons/kid_star.svg" onmouseenter="updateStars(this)" alt="" srcset="">
+                            <img src="./assets/icons/kid_star.svg" onmouseenter="updateStars(this)" alt="" srcset="">
+                            <img src="./assets/icons/kid_star_empty.svg" onmouseenter="updateStars(this)" alt="" srcset="">
+                        </div>
+                    </div>
+    
+                    <div class="form_group">
+                        <label for="review_description_input">Beschreibung:</label>
+                        <textarea class="input_field" id="review_description_input" name="reviewText" rows="4"
+                            placeholder="Ihre Bewertung hier eingeben..."></textarea>
+                        <p id="review_text_error" class="form_error d_none">Bitte ausfüllen</p>
+                    </div>
+                    <div class="d_flex_cs_gm f_d_r_resp_c">
+                        <button type="button" onclick="onSubmitReviewSingleOffer()" class="std_btn btn_prime pad_s w_full">Bewertung abschicken</button>
+                        <button onclick="closeDialog('rating_dialog')" type="button"
+                            class="std_btn btn_secondary pad_s w_full">Abbrechen</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+    </main>
+    <footer class="main_footer pad_l">
+        <a class="logo" href="./index.html">
+            <img src="./assets/logo/logo_coderr_light.svg" alt="" srcset="">
+        </a>
+        <p>© 2024 Coderr. All rights reserved.</p>
+        <div class="d_flex_cc_gm">
+            <a class="link" href="./imprint.html">Impressum</a>
+            <a class="link" href="./privacy_policy.html">Datenschutz</a>
+        </div>
+    </footer>
+</body>
+
+</html>

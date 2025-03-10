@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coderr/</title>
+    <link rel="icon" type="image/png" href="./assets/logo/favicon.png" />
+
+    <link rel="stylesheet" href="./shared/styles/variables.css">
+    <link rel="stylesheet" href="./shared/styles/standard.css">
+    <link rel="stylesheet" href="./shared/styles/form.css">
+    <link rel="stylesheet" href="./shared/styles/assets.css">
+    <link rel="stylesheet" href="./shared/styles/fonts.css">
+    <link rel="stylesheet" href="./shared/styles/header_footer.css">
+    <link rel="stylesheet" href="./styles/offer_list.css">
+
+    <script src="./shared/scripts/config.js"></script>
+    <script src="./shared/scripts/api.js"></script>
+    <script src="./shared/scripts/redirect.js"></script> 
+    <script src="./shared/scripts/ui_helper.js"></script>
+    <script src="./shared/scripts/auth.js"></script>
+    
+    <script src="./shared/scripts/user_crud.js"></script>
+    <script src="./shared/scripts/template/offer_templates.js"></script>
+    <script src="./shared/scripts/offer_crud.js"></script>
+    <script src="./shared/scripts/template/header_template.js"></script>
+    <script src="./shared/scripts/header.js"></script>
+
+    <script src="./scripts/template/offer_list_template.js"></script>
+    <script src="./scripts/offer_list.js"></script>
+</head>
+
+<body onload="setHeader(), offerListInit()" onclick="closeAllOpenedElements()">
+    <header class="main_header">
+
+        <a class="logo" href="./index.html">
+            <img src="./assets/logo/logo_coderr.svg" alt="" srcset="">
+        </a>
+
+        <div id="head_content_right" class="d_flex_cc_gm head_content_right"></div>
+    </header>
+
+    <main class="d_flex_sc_gl f_d_c">
+        <section class="offer_list_header d_flex_cs_gm f_d_c section_group d_none" id="offer_list_greeting_section">
+            
+        </section>
+        <section class="section_group searchbar w_full">
+            <input id="offer_list_searchbar" placeholder="Wonach suchst du?" type="text">
+            <button class="d_flex_cc_gm" onclick="updateOfferListFilterSearch()">
+                <img src="./assets/icons/search.svg" alt="">
+            </button>
+        </section>
+        <section class="d_flex_cs_gl f_d_c w_full section_group pad_l">
+            <h2 class="font_prime_color">Angebote</h2>
+            <div class="d_flex_cs_gl d_sb w_full filter_bar">
+                <div id="time_filter" closable=true open=false onclick="toggleOpenId('time_filter'); stopProp(event)" 
+                class=" d_flex_cc_gm c_pointer dropdown_wrapper time_filter">
+                        <p>Lieferzeit</p>
+                        
+                    <img src="./assets/icons/arrow_drop_down.svg" alt="">
+                    <div class="dropdown_box" onclick="stopProp(event)">
+                        <div class="dropdown_content offer_dropdown_box d_flex_cs_gl f_d_c ">
+                            <div class="d_flex_cs_gm f_d_c" id="offer_list_delivery_time_box">
+                                <div onclick="activateRadio(this); currentmaxDeliveryTime = 1" class="form_group d_flex_cc_gm f_d_r pad_s">
+                                    <input id="radio_1" type="radio" name="role" value="1" required>
+                                    <label for="radio_1">Express 24 h</label>
+                                </div>
+                                <div onclick="activateRadio(this); currentmaxDeliveryTime = 3" class="form_group d_flex_cc_gm f_d_r pad_s">
+                                    <input id="radio_2" type="radio" name="role" value="3" required>
+                                    <label for="radio_2">bis zu 3 Tage</label>
+                                </div>
+                                <div onclick="activateRadio(this); currentmaxDeliveryTime = 7" class="form_group d_flex_cc_gm f_d_r pad_s">
+                                    <input id="radio_3" type="radio" name="role" value="7" required>
+                                    <label for="radio_3">bis zu 7 Tage</label>
+                                </div>
+                            </div>
+                            <div class="d_flex_cc_gm f_d_r_resp_c">
+                                <button onclick="offerListAbboardDeliveryTime()" class="std_btn btn_secondary pad_s">
+                                    Auswahl aufheben
+                                </button>
+                                <button onclick="offerListApplyDeliveryTimeFilter()" class="std_btn btn_prime pad_s">
+                                    Anwenden
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d_flex_cs_gm  f_d_r_resp_c">
+                    <p for="offer_list_filter_ordering" class="ws_nw">Sortieren nach:</p>
+                    <select onchange="updateOfferListFilter()" id="offer_list_filter_ordering" class="input_field">
+                        <option value="" disabled selected hidden>Bitte wähle eine Option</option>
+                        <option value="-updated_at">Neueste zuerst</option>
+                        <option value="updated_at">Älteste zuerst</option>
+                        <option value="min_price">Niedrigste Preis zuerst</option>
+                        <option value="-min_price">Höchste Preis zuerst</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="offer_list_content" class="offer_content w_full">
+
+            </div>
+        </section>
+
+        
+    </main>
+    <footer class="main_footer pad_l">
+        <a class="logo" href="./index.html">
+            <img src="./assets/logo/logo_coderr_light.svg" alt="" srcset="">
+        </a>
+        <p>© 2024 Coderr. All rights reserved.</p>
+        <div class="d_flex_cc_gm">
+            <a class="link" href="./imprint.html">Impressum</a>
+            <a class="link" href="./privacy_policy.html">Datenschutz</a>
+        </div>
+    </footer>
+</body>
+
+</html>

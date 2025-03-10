@@ -1,0 +1,109 @@
+.order_status {
+    margin-right: 72px;
+    height: 48px;
+    display: flex;
+}
+
+.order_status_icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+}
+
+.order_status[status="in_progress"]>.order_status_icon {
+    background-color: orange;
+}
+
+.order_status[status="completed"]>.order_status_icon {
+    background-color: green;
+}
+
+.order_status[status="cancelled"]>.order_status_icon {
+    background-color: red;
+}
+
+
+.order_info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+
+.order_list {
+    width: 100%;
+    padding: 0;
+    gap: 16px;
+}
+
+.order_item_box {
+
+    position: relative;
+}
+
+.order_item {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.order_btn_close {
+    display: flex;
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.order_btn_close>img {
+    width: 14px;
+    height: 14px;
+    transition: all 200ms ease-in-out;
+}
+
+.order_btn_close[open=false]>img {
+    transform: rotate(45deg);
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1124px) {
+    .order_item {
+        flex-direction: column;
+    }
+
+    
+}
+
+@media only screen and (max-width: 769px) {
+    .order_item {
+        flex-direction: column;
+    }
+
+    .order_status {
+        margin-right: 0px;
+    }
+
+    .order_btn_close {
+        height: 24px;
+        width: 24px;
+        padding: 4px !important;
+    }
+
+    .order_btn_close>img {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+
+
+.order_item_detail {
+    overflow: hidden;
+    padding: 0px;
+    height: 0px;
+}
+
+.order_btn_close[open=true]~.order_item_detail {
+    height: unset;
+}

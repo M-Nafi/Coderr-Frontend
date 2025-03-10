@@ -1,0 +1,47 @@
+.offer_list_header{
+    background: rgba(0, 0, 0, .8) url('../assets/img/header_bg.png');
+    background-blend-mode: darken;
+    border-radius: var(--form-rad);
+    padding: 48px;
+
+}
+
+.nothing_found_img{
+    width: 100%;
+    max-width: 1020px;
+}
+
+.discount_code_group{
+    width: 100%;
+}
+
+.discount_list{
+    width: 100%;
+    max-width: var(--form-max-w);
+}
+
+
+.offer_edit_group{
+    width: 100%;
+    max-width: var(--form-max-w);
+}
+
+.offer_variants{
+    width: 100%;
+}
+
+.add_feature_field{
+    margin-top: 16px;
+    width: 100%;
+}
+
+.filter_bar {
+    flex-direction: row !important;
+}
+
+@media screen and (max-width: 780px) {
+    .filter_bar {
+        flex-direction: column !important;
+    }
+
+}

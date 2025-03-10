@@ -1,0 +1,175 @@
+main{
+    padding: 32px 0 !important;
+}
+
+.profile_stats {
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+}
+
+.profile_stats>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.profile_stats>div>div {
+    height: 160px;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 769px) {
+    .profile_stats {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .profile_stats>div>div {
+        width: 160px;
+    }
+}
+
+.landingheader_box {
+    height: 600px;
+    background: var(--bg-color-dark);
+    padding: 0 240px;
+    position: relative;
+    border-radius: var(--form-rad);
+}
+
+.person_img {
+    width: 170px;
+    height: 270px;
+    border-radius: 8px;
+    background: #DE3C3F;
+    position: absolute;
+}
+
+.landingheader_box img:nth-child(1) {
+    top: 0;
+    left: 48px;
+}
+
+.landingheader_box img:nth-child(2) {
+    right: 24px;
+    bottom: 16px;
+}
+
+.landingheader_box img:nth-child(3) {
+    left: 24px;
+    bottom: 16px;
+}
+
+.landingheader_box img:nth-child(4) {
+    top: 0;
+    right: 48px;
+}
+
+h1{
+    text-align: center;
+}
+
+.green_info_section{
+    background: #DEFFD6;
+}
+
+.green_info_section > section > h2, .green_info_section > section > div{
+    width: 40%;
+}
+
+.green_info_section > section{
+    max-width: 1440px;
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1124px) {
+    .landingheader_box {
+        height: 500px;
+    }
+
+    .landingheader_box {
+        padding: 0 210px;
+    }
+
+    .person_img {
+        width: 140px;
+        height: 220px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    h1 {
+        font-size: 34px !important;
+    }
+
+    .landingheader_box {
+        height: 450px;
+    }
+
+    .landingheader_box {
+        padding: 0 170px;
+    }
+
+    .person_img {
+        width: 110px;
+        height: 180px;
+    }
+}
+
+@media only screen and (max-width: 769px) and (min-width: 480px) {
+    h1 {
+        font-size: 28px !important;
+    }
+
+    .landingheader_box {
+        height: 550px;
+    }
+
+    .landingheader_box {
+        padding: 0 32px;
+    }
+
+    .person_img {
+        width: 90px;
+        height: 150px;
+    }
+    
+    .green_info_section > section{
+        flex-direction: column;
+    }
+
+    .green_info_section > section > h2, .green_info_section > section > div{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 28px !important;
+    }
+
+    .landingheader_box {
+        height: 650px;
+        padding: 0 4px;
+    }
+
+    .person_img {
+        width: 70px;
+        height: 120px;
+    }
+
+    .green_info_section > section{
+        flex-direction: column;
+    }
+    .green_info_section > section > h2, .green_info_section > section > div{
+        width: 100%;
+    }
+}

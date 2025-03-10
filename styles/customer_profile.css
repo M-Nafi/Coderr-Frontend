@@ -1,0 +1,5 @@
+@media only screen and (max-width: 769px) {
+  .about_me_section, .about_me_header {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coderr/</title>
+    <link rel="icon" type="image/png" href="./assets/logo/favicon.png" />
+
+    <link rel="stylesheet" href="./shared/styles/variables.css">
+    <link rel="stylesheet" href="./shared/styles/standard.css">
+    <link rel="stylesheet" href="./shared/styles/form.css">
+    <link rel="stylesheet" href="./shared/styles/assets.css">
+    <link rel="stylesheet" href="./shared/styles/fonts.css">
+    <link rel="stylesheet" href="./shared/styles/header_footer.css">
+    <link rel="stylesheet" href="./styles/login.css">
+
+    <script src="./shared/scripts/config.js"></script>
+    <script src="./shared/scripts/api.js"></script>
+    <script src="./shared/scripts/redirect.js"></script> 
+    <script src="./shared/scripts/ui_helper.js"></script>
+    <script src="./shared/scripts/form_helper.js"></script>
+
+    <script src="./shared/scripts/user_crud.js"></script>
+    <script src="./shared/scripts/auth.js"></script>
+    <script src="./shared/scripts/template/header_template.js"></script>
+    <script src="./shared/scripts/header.js"></script>
+
+    <script src="./scripts/login.js"></script>
+</head>
+
+<body onload="checkAuthLogin()" onclick="closeAllOpenedElements()">
+    <header class="main_header">
+
+        <a class="logo" href="./index.html">
+            <img src="./assets/logo/logo_coderr.svg" alt="" srcset="">
+        </a>
+        <div id="head_content_right" class="d_flex_cc_gm head_content_right"></div>
+    </header>
+
+    <main class="d_flex_cc_gm">
+        <section class="login_section small_form d_flex_cc_gm ">
+            <div class="login_img_section d_flex_cc_gm">
+                <img src="./assets/img/login_img.png" alt="" srcset="">
+            </div>
+            <div class="login_form_section w_full d_flex_cc_gm f_d_c">
+                <h1 class="font_prime_color">Log In</h1>
+                <form onsubmit="logInSubmit(event)" class="std_form d_flex_cs_gl f_d_c">
+                    <div class="form_group">
+                        <label for="username">Benutzername</label>
+                        <input onkeydown="hideFormErrors(['error_pw'])" placeholder="Benutzer" class="input_field" type="text" id="username" name="username"  required>
+                    </div>
+                    <div class="form_group">
+                        <label for="password">Passwort</label>
+                        <input onkeydown="hideFormErrors(['error_pw'])" placeholder="Passwort" class="input_field" type="password" id="password" name="password"  required>
+                    </div>
+                    <p id="error_pw" class="form_error d_none">Benutzer oder Passwort falsch</p>
+                    <div class="d_flex_cc_gl f_d_r_resp_c w_full">
+                        <p>Du hast noch kein Konto?</p>
+                        <a href="./registration.html" class="link d_flex_cc_gm">
+                            Hier registrieren 
+                            <img src="./assets/icons/arrow_forward.svg" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="d_flex_cc_gl f_d_r_resp_c w_full">
+                        <button type="submit" class="std_btn btn_prime pad_s">Anmelden</button>
+                        <button type="button" onclick="openDialog('guest_login_dialog')" class="std_btn btn_secondary pad_s">Gäste-Login</button>
+                    </div>
+                </form>
+                
+            </div>
+        </section>
+        <section onclick="closeDialog('guest_login_dialog')" id="guest_login_dialog" class="dialog pad_m d_flex_cc_gm d_none">
+            <div onclick="stopProp(event)" class="m_auto small_form d_flex_cs_gl f_d_c">
+
+                <h2 class="font_prime_color">Wähle einen Gastzugang</h2>
+                <div class="d_flex_cc_gl f_d_r_resp_c ">
+                    <div class="card d_flex_cc_gl f_d_c ">
+                        <h3 class="font_prime_color">Demo-Anbieter</h3>
+                        <p>Ein Anbieter kann:</p>
+                        <ul class="feature_list d_flex_cc_gm f_d_c">
+                            <li>Angebote erstellen</li>
+                            <li>Bestellungen bearbeiten</li>
+                        </ul>
+                        <button onclick="guestLogin('business')" class="login_btn std_btn btn_prime pad_s d_flex_cc_gm"><img src="./assets/icons/arrow_forward.svg" alt="" srcset=""> Login</button>
+                    </div>
+                    <div class="card d_flex_cc_gl f_d_c ">
+                        <h3 class="font_prime_color">Demo-Kunde</h3>
+                        <p>Ein Kunde kann:</p>
+                        <ul class="feature_list d_flex_cc_gm f_d_c">
+                            <li>Rieviews erstellen</li>
+                            <li>Bestellungen aufgeben</li>
+                        </ul>
+                        <button onclick="guestLogin('customer')" class="login_btn std_btn btn_prime pad_s d_flex_cc_gm"><img src="./assets/icons/arrow_forward.svg" alt="" srcset=""> Login</button>
+                    </div>
+                </div>
+                <p>Beide können Angebote durchsuchen und andere öffentliche Profile einsehen.</p>
+
+            </div>
+        </section>
+        
+    </main>
+    <footer class="main_footer pad_l">
+        <a class="logo" href="./index.html">
+            <img src="./assets/logo/logo_coderr_light.svg" alt="" srcset="">
+        </a>
+        <p>© 2024 Coderr. All rights reserved.</p>
+        <div class="d_flex_cc_gm">
+            <a class="link" href="./imprint.html">Impressum</a>
+            <a class="link" href="./privacy_policy.html">Datenschutz</a>
+        </div>
+    </footer>
+</body>
+
+</html>
