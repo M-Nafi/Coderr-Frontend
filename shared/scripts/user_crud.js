@@ -14,7 +14,7 @@ async function setUsers() {
 }
 
 function getUserInfo(id) {
-    return globalUsers.find(user => user.user.pk === id) || null
+    return globalUsers.find(user => user.user === id) || null
 }
 
 async function setCurrentUser() {
