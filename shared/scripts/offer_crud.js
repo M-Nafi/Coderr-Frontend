@@ -334,9 +334,6 @@ function createEmptyOffer() {
 }
 
 
-
-
-
 // Feature CRUD
 
 function isInEdit(id) {

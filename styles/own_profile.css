@@ -11,10 +11,6 @@
     width: calc(100% - 450px);
 }
 
-.profile_detail > div{
-    
-}
-
 @media screen and (max-width: 1024px) {
     .business_section{
         flex-direction: column;

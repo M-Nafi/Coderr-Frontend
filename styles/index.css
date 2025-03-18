@@ -50,8 +50,10 @@ main{
     width: 170px;
     height: 270px;
     border-radius: 8px;
-    background: #DE3C3F;
+    background: #deffd6;
     position: absolute;
+    padding: 2px;
+    margin-top: 16px;
 }
 
 .landingheader_box img:nth-child(1) {
